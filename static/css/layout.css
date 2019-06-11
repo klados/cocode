@@ -1,0 +1,30 @@
+
+.wrap {
+  text-align: center;
+}
+
+.alert-success {
+	/* background-color: green; */
+ 	color:	green;
+}
+.alert-info {
+	/* background-color:blue; */
+ 	color:	blue;
+}
+.alert-warning {
+	/* background-color:yellow; */
+	color:yellow;
+}
+.alert-danger {
+	/* background-color:red; */
+	color: red;
+}
+
+.close {
+	position: absolute;
+	top: 50%;
+	right: 0.5rem;
+
+	color: inherit;
+	margin-top: -18px;
+}

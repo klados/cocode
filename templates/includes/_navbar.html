@@ -1,0 +1,40 @@
+  <nav>
+    <div class="nav-wrapper blue">
+			<div class='container'>	
+				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+				<a href="#" class="brand-logo">CoCode</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="/">Home</a></li>
+					<li><a href="about">About</a></li>
+					<!-- <li><a href="/data">Data</a></li> -->
+
+					{% if session.loggedIn %}
+						<li><a href="/projects">My Projects</a></li>
+						<li><a href="/logout">Logout</a></li>
+					{% else%}
+						<li><a href="/register">Register</a></li>
+						<li><a href="/login">Login</a></li>
+					{% endif %}
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+
+
+	<ul id="slide-out" class="sidenav">
+		<li class='blue-text center-align'><h4>CoCode</h4></li>
+		<li class='center-align'><h5>{{session['username']}}</h5></li>
+		<li><a href="/">Home</a></li>
+		<li><a href="about">About</a></li>
+
+		{% if session.loggedIn %}
+		<li><a href="/projects">My Projects</a></li>
+		<li><a href="/logout">Logout</a></li>
+		{% else%}
+		<li><a href="/register">Register</a></li>
+		<li><a href="/login">Login</a></li>
+		{% endif %}
+	</ul>
+

@@ -1,0 +1,30 @@
+#main{
+	height: 90vh;
+}
+
+.row{
+	margin-left:0px;
+	margin-right:0px;
+}
+
+#newSessionTitle{
+	margin-top:5%;
+}
+
+#joinSessionTitle{
+	margin-top:5%;
+}
+
+#chat{
+	overflow-y: auto;
+	padding-left:5px;
+	min-height: 600px;
+	max-height:600px;
+	border: 2px solid #dedede;
+	background-color: #f1f1f1;
+	margin: 10px 0;
+}
+
+.prefix{
+	font-weight: bold;
+}

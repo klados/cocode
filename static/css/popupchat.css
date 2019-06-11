@@ -1,0 +1,32 @@
+
+#live-chat {
+	background-color: #f1f1f1;
+	bottom: 0;
+	font-size: 12px;
+	right: 24px;
+	position: fixed;
+	width: 500px;
+
+	border: 2px solid #dedede;
+}
+
+
+#privateChat, #globalChat{
+	min-height: 400px;
+	max-height:400px;
+	border: 2px solid #dedede;
+	overflow-y: auto;
+}
+
+#needloginmsg{
+	margin-top: 44.832;
+}
+
+#live-chat header {
+	/* background: #293239; */
+	border-radius: 5px 5px 0 0;
+	/* color: #fff; */
+	cursor: pointer;
+	/* padding: 16px 24px; */
+}
+

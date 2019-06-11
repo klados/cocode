@@ -1,0 +1,87 @@
+
+<link rel='stylesheet' href="{{ url_for('static',filename='css/popupchat.css') }}">
+
+<div id="live-chat">
+
+	<header>
+		<h5 class='center-align'>Chat</h5>
+	</header>
+
+	<div class='chat'>
+
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s6"><a href="#private">Private</a></li>
+					<li class="tab col s6"><a href="#global">Global</a></li>
+				</ul>
+			</div>
+
+			<div id="private" class="col s12">
+				<div id="privateChat"></div>
+
+				<div class='row'>
+					<div class='input-field col s10'>
+						<input type='text' id='privateChatField'> 
+						<label for='privateChatField'>Send a message to your coworker</label>
+					</div>
+					<div class='input-field col s2'>
+						<button type='button' id='sendPrivateMsg' class='btn waves-effect blue'>Send</button>
+					</div>
+				</div>
+			</div>
+
+			<div id="global" class="col s12">
+				<div id="globalChat"></div>
+
+				{% if session.loggedIn == True %}
+				<div class='row'>
+					<div class='input-field col s10'>
+						<input type='text' id='globalChatField'> 
+						<label for='globalChatField'>Send a message to the world</label>
+					</div>
+					<div class='input-field col s2'>
+						<button type='button' id='sendGlobalMsg' class='btn waves-effect blue'>Send</button>
+					</div>
+				</div>
+				{% else %}
+				<div class='row'>
+					<div class='col s12'> 
+						<h5 id='needloginmsg' class='center-align'>Login to be able to chat</h5>
+					</div>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- 	<div class="chat"> -->
+<!-- 		<div class="chat&#45;history"> -->
+<!--  -->
+<!-- 			<div class="chat&#45;message clearfix"> -->
+<!-- 				<img src="http://lorempixum.com/32/32/people" alt="" width="32" height="32"> -->
+<!-- 				<div class="chat&#45;message&#45;content clearfix"> -->
+<!-- 					<span class="chat&#45;time">13:35</span> -->
+<!-- 					<h5>John Doe</h5> -->
+<!-- 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p> -->
+<!-- 				</div> <!&#45;&#45; end chat&#45;message&#45;content &#45;&#45;> -->
+<!-- 			</div> <!&#45;&#45; end chat&#45;message &#45;&#45;> -->
+<!-- 			<hr> -->
+<!--  -->
+<!-- 		</div> <!&#45;&#45; end chat&#45;history &#45;&#45;> -->
+<!--  -->
+<!-- 		<p class="chat&#45;feedback">Your partner is typing…</p> -->
+<!-- 		<form action="#" method="post"> -->
+<!-- 			<fieldset> -->
+<!-- 				<input type="text" placeholder="Type your message…" autofocus> -->
+<!-- 				<input type="hidden"> -->
+<!-- 			</fieldset> -->
+<!-- 		</form> -->
+<!--  -->
+<!-- 	</div> <!&#45;&#45; end chat &#45;&#45;> -->
+<!-- </div> <!&#45;&#45; end live&#45;chat &#45;&#45;> -->
+
+<script src="{{ url_for('static',filename='js/popupchat.js') }}"></script>

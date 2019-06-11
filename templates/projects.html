@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/projects.css') }}" type="text/css" media="screen" charset="utf-8">
+
+<div class='container'>
+
+	<div class="row">
+		<div class="input-field col s12">
+			<i class="material-icons prefix">search</i>
+			<input id="search" type="text" class="validate">
+			<label for="search">Search a project by name</label>
+		</div>
+	</div>
+
+
+	<div class='row'>
+
+		{% if projects|length ==  0 %}	
+			<div class='center-align'>
+				<a class='modal-trigger btn waves-effect blue' href='#createNewProjectModal'>
+				Start new project</a>
+			</div>
+		{% endif %}
+
+		{% for project in projects %}
+		<div class="col s12 m6 l4 cards-container project">
+			<div class="card ">
+				<div class="card-content ">
+					<span class="card-title">{{ project['title'] }}</span>
+					<ul>
+						<li><span>Written in:</span> {{ project['language'] }} </li>
+						<li><span>Description:</span> {{ project['description'] }} </li>
+						<li><span>Created on:</span> {{ project['day'] }} </li>
+					</ul>
+				</div>
+				<div class="card-action">
+					<a href="/openExistingProject?projectId={{project['id']}}" class='btn green openExistingProject'>Open Project</a>
+					<button data-id="{{project['id']}}" class='btn red deleteProject'>Delete Project</button>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+
+	</div>
+
+</div>
+
+	{% include 'includes/_createNewProject.html' %}
+
+<script src="{{ url_for('static',filename='js/projects.js') }}" type="text/javascript" charset="utf-8"></script>
+{% endblock %}
